@@ -1,0 +1,33 @@
+Django Installation Code:
+pip install django(it does not work) or py -m pip install Django(it works)
+pip list
+-----------------------------------------------------------------------------
+Open New Project:
+django-admin startproject NAME_OF_PROJECT
+python manage.py runserver
+-----------------------------------------------------------------------------
+Change port:
+python manage.py runserver 7000
+-----------------------------------------------------------------------------
+Atom Link:  atom.io
+-----------------------------------------------------------------------------
+Package Names: 
+atom-django
+autocomplete-python
+platformio-ide-terminal
+-----------------------------------------------------------------------------
+Command Prompt Link:
+C:\Windows\System32\cmd.exe
+-----------------------------------------------------------------------------
+Change directory shortcut:
+.....> cd 1st_letter_of-project + TAB
+-----------------------------------------------------------------------------
+Go to directories:
+.....> dr
+-----------------------------------------------------------------------------
+Creat New App:
+python manage.py startapp app_name
+-----------------------------------------------------------------------------
+To link created app with project 
+-> go to settings of project & add app in installed app
+-----------------------------------------------------------------------------
