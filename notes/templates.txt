@@ -1,0 +1,11 @@
+type <html + Enter to create the html tags in html file
+---------------------------------------------------------------------------------------------------------------------
+TEMP_DIR = os.path.join(BASE_DIR,'templates')
+ and also add in TEMPTEMPLATES 'DIRS': [TEMP_DIR,]
+ and change the views
+ def home(request):
+     diction = {}
+     return render(request, 'my_app/index.html', context=diction)
+---------------------------------------------------------------------------------------------------------------------
+if we want to pass anything from view to templates html files
+we should modify the dictionary of view and add that in html file with {{}}
