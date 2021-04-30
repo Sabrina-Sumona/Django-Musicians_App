@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    diction = {'text_1': "This is Sabrina Sumona"}
+    diction = {'text_1': "Live like a boss"}
     return render(request, 'my_app/index.html', context=diction)
 
 def contact(request):

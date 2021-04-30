@@ -1,13 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Homepage of MY App</title>
+    <link rel="stylesheet" href={% static "my_app/css/style.css" %}>
   </head>
   <body>
     <h1>This is Homepage</h1>
     <h1>My name is SNS </h1>
     <a href='contact/'>Contact</a> <a href='about/'>About</a>
+    <br>
+    <img src="{% static "my_app/images/boss_lady.jpg" %}" alt="boss_lady">
     <br>
     {{ text_1 }}
   </body>

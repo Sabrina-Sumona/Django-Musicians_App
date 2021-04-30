@@ -9,3 +9,6 @@ TEMP_DIR = os.path.join(BASE_DIR,'templates')
 ---------------------------------------------------------------------------------------------------------------------
 if we want to pass anything from view to templates html files
 we should modify the dictionary of view and add that in html file with {{}}
+---------------------------------------------------------------------------------------------------------------------
+similarly add STATIC folder & STATICFILES_DIRS = [ STATIC_DIR, ]
+And {% load static %} in html file
