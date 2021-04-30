@@ -4,6 +4,8 @@ pip list
 -----------------------------------------------------------------------------
 Open New Project:
 django-admin startproject NAME_OF_PROJECT
+-----------------------------------------------------------------------------
+Run Project:
 python manage.py runserver
 -----------------------------------------------------------------------------
 Change port:
@@ -11,7 +13,7 @@ python manage.py runserver 7000
 -----------------------------------------------------------------------------
 Atom Link:  atom.io
 -----------------------------------------------------------------------------
-Package Names: 
+Package Names:
 atom-django
 autocomplete-python
 platformio-ide-terminal
@@ -28,6 +30,6 @@ Go to directories:
 Creat New App:
 python manage.py startapp app_name
 -----------------------------------------------------------------------------
-To link created app with project 
+To link created app with project
 -> go to settings of project & add app in installed app
 -----------------------------------------------------------------------------
