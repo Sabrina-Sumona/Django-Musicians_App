@@ -1,0 +1,41 @@
+# # SQL vs models
+
+# SQL code
+CREATE TABLE Person (
+  "id" serial NOT NULL PRIMARY KEY,
+  "first_name" varchar(30) NOT NULL,
+  "last_name" varchar(30) NOT NULL
+ )
+
+# model code
+class Person(models.Model):
+  id = models.AutoField(primary_key=True)
+  first_name = models.CharField(max_length=30)
+  last_name = models.CharField(max_length=30)
+
+-----------------------------------------------------------------------------
+documentation:
+https://docs.djangoproject.com/en/3.2/topics/db/models/
+-----------------------------------------------------------------------------
+we have to convert the model into sql by using migration command:
+
+python manage.py migrate
+python manage.py makemigrations APP_NAME
+python manage.py migrate
+-----------------------------------------------------------------------------
+object creation commands to take input for tables:
+
+python manage.py shell
+from my_app.models import Musician
+print(Musician.objects.all())
+obj = Musician(first_name="Eric", last_name="Clapton", instrument="Guitar")
+obj.save()
+obj = Musician(first_name="Hilary", last_name="Hahn", instrument="Violin")
+obj.save()
+print(Musician.objects.all())
+-----------------------------------------------------------------------------
+command to exit shell:
+exit()
+-----------------------------------------------------------------------------
+admin superuser command:
+python manage.py createsuperuser
