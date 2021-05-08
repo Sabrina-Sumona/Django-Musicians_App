@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from my_app.models import Musician, Album
 
 # Create your views here.
 
 def home(request):
-    diction = {'text_1': "Live like a boss"}
+    # return render(request, 'my_app/index.html', context=diction)
+    # DJNGO query
+    musician_list = Musician.objects.order_by('first_name')
+    diction = {'text_1': "Live like a boss",'text_2':'This a list of Musicians', 'musician': musician_list}
     return render(request, 'my_app/index.html', context=diction)
 
 def contact(request):

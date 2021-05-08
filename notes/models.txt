@@ -34,8 +34,19 @@ obj = Musician(first_name="Hilary", last_name="Hahn", instrument="Violin")
 obj.save()
 print(Musician.objects.all())
 -----------------------------------------------------------------------------
+command to run server
+python manage.py runserver
+-----------------------------------------------------------------------------
 command to exit shell:
 exit()
 -----------------------------------------------------------------------------
 admin superuser command:
 python manage.py createsuperuser
+-----------------------------------------------------------------------------
+SQL query vs Django query:
+
+SQL query:
+SELECT * FROM Musician ORDER BY first_name
+
+Django query:
+musician_list = Musician.objects.order_by('first_name')
