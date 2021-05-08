@@ -19,6 +19,10 @@ def about(request):
     diction = {}
     return render(request, 'my_app/about.html', context=diction)
 
+def form(request):
+    diction = {}
+    return render(request, 'my_app/form.html', context=diction)
+
 # def index(request):
 #     diction = {}
 #     return render(request, 'my_app/index.html', context=diction)
