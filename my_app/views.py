@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from my_app.models import Musician, Album
+# here all forms of my_app will be imported
+from my_app.form import user_form
 
 # Create your views here.
 
@@ -20,7 +22,9 @@ def about(request):
     return render(request, 'my_app/about.html', context=diction)
 
 def form(request):
-    diction = {}
+    new_form = user_form
+    # diction = {'test_form': new_form, 'heading_1': "This form is created using django forms library"}
+    diction = {'test_form': new_form, 'heading_2': "Django Form"}
     return render(request, 'my_app/form.html', context=diction)
 
 # def index(request):

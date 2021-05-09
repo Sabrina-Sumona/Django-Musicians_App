@@ -1,0 +1,10 @@
+html form vs django form:
+
+html:
+<label for="user_name">Please Enter Your Name</label>
+<input type="text" name="user_name" value="" required>
+
+django:
+user_name = forms.CharField()
+
+-----------------------------------------------------------------------------
