@@ -10,9 +10,11 @@
   <body>
     <!-- <h1>This is Homepage</h1> -->
     <!-- <h1>My name is SNS </h1> -->
-    <a href='contact/'>Contact</a>
+    <!-- <a href='contact/'>Contact</a>
     <a href='about/'>About</a>
-     <a href='form/'>Form</a>
+    <a href='form/'>Form</a> -->
+    <!-- <a href="/form/">Add New</a> -->
+    <a href="{% url 'my_app:form' %}">Add New</a>
     <br>
     <br>
     <h3>{{ text_1 }}</h3>
