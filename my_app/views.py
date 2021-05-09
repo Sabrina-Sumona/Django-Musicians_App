@@ -37,10 +37,17 @@ def form(request):
             user_name = new_form.cleaned_data['user_name']
             user_dob = new_form.cleaned_data['user_dob']
             user_email = new_form.cleaned_data['user_email']
+            agreement = new_form.cleaned_data['agreement']
 
             diction.update({'user_name':user_name})
             diction.update({'user_dob':user_dob})
             diction.update({'user_email':user_email})
+            diction.update({'agreement': agreement})
+
+            diction.update({'rating': new_form.cleaned_data['rating']})
+            diction.update({'gender': new_form.cleaned_data['gender']})
+            diction.update({'color': new_form.cleaned_data['color']})
+
             diction.update({'form_submited':"Yes"})
 
     return render(request, 'my_app/form.html', context=diction)
