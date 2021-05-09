@@ -22,12 +22,21 @@
     </form>
     <hr>
     <h3>{{ heading_1 }}</h3> -->
-    <form action="" method="post">
+    <form action="" method="POST">
       <!-- {{ test_form }} -->
       <h3>{{ heading_2 }}</h3>
       <!-- here all input fields will be shown as paragraph -->
       {{ test_form.as_p }}
       <!-- as_ul shows as under ordered list & as_table shows as table -->
+      <!-- django does not allow submission without csrf_token -->
+      {% csrf_token %}
+      <input type="submit" name="submit" value="Submit">
     </form>
+    <hr>
+    {% if form_submited %}
+      <p>Name: {{ user_name }}</p>
+      <p>Date of Birth: {{ user_dob }}</p>
+      <p>Email: {{ user_email }}</p>
+    {% endif %}
   </body>
 </html>

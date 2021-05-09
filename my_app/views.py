@@ -22,9 +22,27 @@ def about(request):
     return render(request, 'my_app/about.html', context=diction)
 
 def form(request):
+    # here initial form will be stored
     new_form = user_form
     # diction = {'test_form': new_form, 'heading_1': "This form is created using django forms library"}
     diction = {'test_form': new_form, 'heading_2': "Django Form"}
+
+    if request.method == 'POST':
+        # here form with inputs will be stored
+        new_form = user_form(request.POST)
+
+        #here the validation of the inputs will be checked
+        if new_form.is_valid():
+            # if valid the values will be collected from new form
+            user_name = new_form.cleaned_data['user_name']
+            user_dob = new_form.cleaned_data['user_dob']
+            user_email = new_form.cleaned_data['user_email']
+
+            diction.update({'user_name':user_name})
+            diction.update({'user_dob':user_dob})
+            diction.update({'user_email':user_email})
+            diction.update({'form_submited':"Yes"})
+
     return render(request, 'my_app/form.html', context=diction)
 
 # def index(request):
