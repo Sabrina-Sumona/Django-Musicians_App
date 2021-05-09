@@ -10,8 +10,9 @@ user_name = forms.CharField()
 -----------------------------------------------------------------------------
 Fields:
 https://docs.djangoproject.com/en/3.0/ref/forms/fields/#built-in-field-classes
-
-----------------------
-
+-----------------------------------------------------------------------------
 Widgets:
 https://docs.djangoproject.com/en/3.0/ref/forms/widgets/
+-----------------------------------------------------------------------------
+Form validation
+https://docs.djangoproject.com/en/3.0/ref/validators/

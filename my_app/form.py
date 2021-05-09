@@ -1,13 +1,37 @@
 from django import forms
 # here forms is bulit in library & CharField(), EmailField() etc are library FUNCTIONS
+from django.core import validators
+
+def even(val):
+    if val % 2 != 0:
+        raise forms.ValidationError("It must be an even number!")
+
 class user_form(forms.Form):
 
     # we can set max & min length of a char field
-    user_name = forms.CharField(max_length=20, min_length=5, label="Full Name", widget = forms.TextInput( attrs= {'placeholder':'Enter your full name','style':'width:300px'} ) )
+    # user_name = forms.CharField(max_length=20, min_length=5, label="Full Name", widget = forms.TextInput( attrs= {'placeholder':'Enter your full name','style':'width:300px'} ) )
+    # we can validate a input by using validators
+    user_name = forms.CharField(validators=[validators.MaxLengthValidator(20),validators.MinLengthValidator(5)], label="Full Name", widget = forms.TextInput( attrs= {'placeholder':'Enter your full name','style':'width:300px'} ) )
 
     user_dob = forms.DateField(label="Date of Birth", widget = forms.TextInput( attrs={'type':'date'}))
 
-    user_email = forms.EmailField(label="Email", widget = forms.TextInput( attrs= {'placeholder':'Enter your Email Address',} ))
+    # in case of char field 'length' term is used but in case of num 'value' term is used for max / min count
+    user_age = forms.IntegerField(validators=[validators.MaxValueValidator(100),validators.MinValueValidator(1)], label="Current Age")
+
+    # user defined validators
+    num_field = forms.IntegerField(validators=[even], label="Enter an even number")
+
+    user_email = forms.EmailField(label="Email", widget = forms.TextInput( attrs= {'placeholder':'Enter your email address',} ))
+
+    user_vemail = forms.EmailField(label="Confirm Email", widget = forms.TextInput( attrs= {'placeholder':'Enter your email again',} ))
+
+    def clean(self):
+        all_cleaned_data = super().clean()
+        user_emai = all_cleaned_data['user_email']
+        user_vemail = all_cleaned_data['user_vemail']
+
+        if user_emai != user_vemail:
+            raise forms.ValidationError("Emails Don't Match!!!!")
 
     # boolean field returns true or false wuth checkbox
     agreement = forms.BooleanField(required=False)

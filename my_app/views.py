@@ -30,7 +30,8 @@ def form(request):
     if request.method == 'POST':
         # here form with inputs will be stored
         new_form = user_form(request.POST)
-
+        # to show error messages we must update the initial form with the new form to find error
+        diction.update({'test_form':new_form})
         #here the validation of the inputs will be checked
         if new_form.is_valid():
             # if valid the values will be collected from new form
@@ -47,6 +48,10 @@ def form(request):
             diction.update({'rating': new_form.cleaned_data['rating']})
             diction.update({'gender': new_form.cleaned_data['gender']})
             diction.update({'color': new_form.cleaned_data['color']})
+            diction.update({'user_age': new_form.cleaned_data['user_age']})
+            diction.update({'num_field': new_form.cleaned_data['num_field']})
+
+            diction.update({'user_vemail': 'Emails Match!!'})
 
             diction.update({'form_submited':"Yes"})
 
