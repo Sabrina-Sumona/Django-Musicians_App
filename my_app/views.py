@@ -14,11 +14,11 @@ def index(request):
     diction = {'text_1': "Live like a boss",'text_2':'This a list of Musicians', 'musician': musician_list}
     return render(request, 'my_app/index.html', context=diction)
 
-# def contact(request):
+def contact(request):
     diction = {}
-    # return render(request, 'my_app/contact.html', context=diction)
+    return render(request, 'my_app/contact.html', context=diction)
 
-# def about(request):
+def about(request):
     diction = {}
     return render(request, 'my_app/about.html', context=diction)
 

@@ -16,3 +16,54 @@ https://docs.djangoproject.com/en/3.0/ref/forms/widgets/
 -----------------------------------------------------------------------------
 Form validation
 https://docs.djangoproject.com/en/3.0/ref/validators/
+-----------------------------------------------------------------------------
+<!-- <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href={% static "my_app/css/style.css" %}>
+  </head>
+  <body>
+    <h3>This form is created by HTML code</h3>
+    if action="" the page loaded in the same page after submission of the form otherwise to the given file
+    <form action="" method="post">
+      <label for="user_name">Please Enter Your Name</label>
+      <br>
+      <input type="text" name="user_name" value="" required>
+      <br>
+      <label for="user_email">Please Enter Your Email</label>
+      <br>
+      <input type="email" name="user_email" value="" required>
+      <br>
+      <input type="submit" name="submit" value="Submit">
+    </form>
+    <hr>
+    <h3>{{ heading_1 }}</h3>
+     <form action="" method="POST">
+     {{ test_form }}
+      <h3>{{ heading_2 }}</h3>
+      here all input fields will be shown as paragraph
+      <a href="/my_app">Home</a>
+      <a href="{% url 'my_app:index' %}">Back</a>
+      <h3>{{ heading_3 }}</h3>
+      {{ test_form.as_p }}
+      as_ul shows as under ordered list & as_table shows as table
+      django does not allow submission without csrf_token
+      {% csrf_token %}
+      <input type="submit" name="submit" value="Submit">
+    </form>
+    <hr>
+    {% if form_submited %}
+      <p>Name: {{ user_name }}</p>
+      <p>Date of Birth: {{ user_dob }}</p>
+      <p>Age: {{ user_age }} </p>
+      <p>Number: {{ num_field }} </p>
+      <p>Email: {{ user_email }}</p>
+      <p>Email validation: {{ user_vemail }}</p>
+      <p>Agree: {{ agreement }} </p>
+      <p>Given stars: {{ rating }} </p>
+      <p>Gender: {{ gender }} </p>
+      <p>Favourite color: {{ color }} </p>
+    {% endif %}
+  </body>
+</html> -->

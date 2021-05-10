@@ -12,3 +12,48 @@ we should modify the dictionary of view and add that in html file with {{}}
 ---------------------------------------------------------------------------------------------------------------------
 similarly add STATIC folder & STATICFILES_DIRS = [ STATIC_DIR, ]
 And {% load static %} in html file
+---------------------------------------------------------------------------------------------------------------------
+<!-- <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage of MY App</title>
+    <title>Musician List</title>
+    <link rel="stylesheet" href={% static "my_app/css/style.css" %}>
+  </head>
+  <body>
+    <h1>This is Homepage</h1>
+    <h1>My name is SNS </h1>
+    <a href='contact/'>Contact</a>
+    <a href='about/'>About</a>
+    <a href='form/'>Form</a>
+    <a href="/form/">Add New</a>
+    <a href="{% url 'my_app:form' %}">Add New</a>
+    <br>
+    <br>
+    <h3>{{ text_1 }}</h3>
+    <br>
+    <img src="{% static "my_app/images/boss_lady.jpg" %}" alt="boss_lady">
+    <br>
+    <h1>{{ text_2 }}</h1>
+    <table border="1">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Instrument</th>
+      </tr>
+
+      we can use if-else or loop in html by using this syntax in django
+      {% for row in musician %}
+
+      <tr>
+        we can use variable in html by using this syntax in django
+        <td> {{ row.first_name }} </td>
+        <td> {{ row.last_name }} </td>
+        <td> {{ row.instrument }} </td>
+      </tr>
+
+      {% endfor %}
+
+    </table>
+  </body>
+</html> -->
