@@ -4,11 +4,11 @@
 
 {% block body_block %}
 
-<form action="" method="POST">
-  <h3>{{ text }}</h3>
-  {{ musician_form.as_p }}
-  {% csrf_token %}
-  <input type="submit" name="submit" value="Add" class="btn btn-secondary pl-3 pr-3 btn-sm">
-</form>
+  <form action="" method="POST">
+    <h3>{{ text }}</h3>
+    {{ musician_form.as_p }}
+    {% csrf_token %}
+    <input type="submit" name="submit" value="Add" class="btn btn-primary pl-3 pr-3 btn-sm">
+  </form>
 
 {% endblock %}

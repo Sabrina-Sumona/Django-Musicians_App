@@ -1,15 +1,25 @@
 img {
   width: 50%;
   height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
-body{
+h3, form{
   text-align: center;
 }
 
-table{
+a{
   margin-left: auto;
   margin-right: auto;
+  display: block;
+}
+
+table,tr,td,th{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
  }
 
  .custom-radio-list, .errorlist li{

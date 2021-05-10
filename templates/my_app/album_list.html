@@ -4,18 +4,18 @@
 
 {% block body_block %}
 
-<h3>{{ text }}</h3>
+  <h3>{{ text }}</h3>
 
-<ul>
-  {% if album_list %}
-    {% for album in album_list %}
-      <h5><li style="width:20%; margin-left: auto; margin-right: auto;">
-        {{ album.name }} : {{ album.artist }}
-      </li></h5>
+  <ul>
+    {% if album_list %}
+      {% for album in album_list %}
+        <h5><li style="width:30%; margin-left: auto; margin-right: auto;">
+          {{ album.name }} : {{ album.artist }}
+        </li></h5>
       {% endfor %}
-  {% else %}
-    <h5 style="width:10%; margin-left: auto; margin-right: auto; color: red;">No Musician in the list</h5>
-  {% endif %}
-</ul>
+    {% else %}
+      <h5 style="width:10%; margin-left: auto; margin-right: auto; color: red;">No Musician in the list</h5>
+    {% endif %}
+  </ul>
 
 {% endblock %}

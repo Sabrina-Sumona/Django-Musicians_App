@@ -9,3 +9,27 @@ localhost/phpmyadmin
 -----------------------------------------------------------------------------
 Database Documentation:
 https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+-----------------------------------------------------------------------------
+SQL:
+SELECT * FROM Musician
+
+Django model query:
+Musician.objects.all()
+-----------------------------------------------------------------------------
+SQL:
+SELECT * FROM Musician WHERE id = 1
+
+Django model query:
+Musician.objects.get(pk=1)
+-----------------------------------------------------------------------------
+SQL:
+SELECT * FROM Album WHERE artist_id = 1
+
+Django model query:
+Album.objects.filter(artist_id = 1)
+-----------------------------------------------------------------------------
+SQL:
+SELECT * FROM Musician WHERE instrument = 'Guitar'
+
+Django model query:
+Musician.objects.filter(instrument = 'Guitar')
