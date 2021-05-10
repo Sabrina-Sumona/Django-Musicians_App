@@ -57,3 +57,12 @@ And {% load static %} in html file
     </table>
   </body>
 </html> -->
+---------------------------------------------------------------------------------------------------------------------
+Builtin Template Filters:
+https://docs.djangoproject.com/en/3.0/ref/templates/
+
+Add argument to the value:
+{{value| add:"7"}}
+
+1st letter capital & remove which is into cut from total str:
+{{name | capfirst | cut:" "}}

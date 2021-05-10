@@ -28,7 +28,7 @@ class Album(models.Model):
     (4, "Good"),
     (5, "Excellent!"),
     )
-    
+
     # here choices are int type 1, 2, 3.... and Good, Bad .... are their values
     num_stars = models.IntegerField(choices=rating)
     # num_stars = models.IntegerField()

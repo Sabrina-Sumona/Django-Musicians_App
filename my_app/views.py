@@ -11,7 +11,8 @@ def index(request):
     # return render(request, 'my_app/index.html', context=diction)
     # DJNGO query
     musician_list = Musician.objects.order_by('first_name')
-    diction = {'text_1': "Live like a boss",'text_2':'This a list of Musicians', 'musician': musician_list}
+    # here we can get any value or release date from any album according to the index of that album object
+    diction = {'text_1': "Live like a boss",'text_2':'This a list of Musicians', 'musician': musician_list, 'value': Album.objects.get(pk=4)}
     return render(request, 'my_app/index.html', context=diction)
 
 def contact(request):
