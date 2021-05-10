@@ -13,6 +13,10 @@ class Musician(models.Model):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
+    # # renaming the bd table
+    # class Meta:
+    #     db_table = "album"
+
 class Album(models.Model):
 	# id = models.AutoField(primary_key=True)
     # here we can't delete any musician if the musician's album exist here
@@ -35,3 +39,6 @@ class Album(models.Model):
 
     def __str__(self):
         return self.name + ", Rating: " + str(self.num_stars)
+
+    # class Meta:
+    #     db_table = "musician"

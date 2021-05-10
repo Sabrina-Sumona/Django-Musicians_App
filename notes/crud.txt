@@ -1,0 +1,11 @@
+Xampp Download Link:
+https://www.apachefriends.org/download.html
+-----------------------------------------------------------------------------
+MySql Client:
+pip install mysqlclient
+-----------------------------------------------------------------------------
+MySql Sever Link:
+localhost/phpmyadmin
+-----------------------------------------------------------------------------
+Database Documentation:
+https://docs.djangoproject.com/en/2.2/ref/settings/#databases
