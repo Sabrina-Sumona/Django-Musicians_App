@@ -4,7 +4,7 @@ register = template.Library()
 
 # custom filtering templates by adding extra str
 def my_filter(value):
-    return value + " like a boss"
+    return value + " is Life"
 
 # custom filtering templates by adding extra arg
 def my_filter2(value, arg):

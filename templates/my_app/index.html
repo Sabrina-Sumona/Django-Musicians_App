@@ -6,38 +6,9 @@
 
 {% block body_block %}
 
-<!-- here upper is a built in template filter -->
-<!-- just make the text_1 upper -->
-<!-- <h3>{{ text_1| upper | custom_filter }}</h3> -->
-<!-- make total upper -->
-<h3>{{ text_1 | custom_filter| upper }}</h3>
+<h3>{{ text | custom_filter }}</h3>
 <br>
-<img src="{% static "my_app/images/boss_lady.jpg" %}" alt="boss_lady">
+<img src="{% static "my_app/images/music_bg.jpg" %}" alt="boss_lady">
 <br>
-
-<!-- formating date using built in template filter: -->
-<h1> {{value2 | custom_filter2:' date:'}} {{ value.release_date| date:"M d (D), Y" }}</h1>
-
-<h1>{{ text_2 }}</h1>
-<table border="1">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Instrument</th>
-  </tr>
-
-  <!-- we can use if-else or loop in html by using this syntax in django -->
-  {% for row in musician %}
-
-  <tr>
-    <!-- we can use variable in html by using this syntax in django -->
-    <td> {{ row.first_name }} </td>
-    <td> {{ row.last_name }} </td>
-    <td> {{ row.instrument }} </td>
-  </tr>
-
-  {% endfor %}
-
-</table>
 
 {% endblock %}

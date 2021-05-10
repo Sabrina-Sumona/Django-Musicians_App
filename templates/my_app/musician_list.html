@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{% extends "my_app/base.html" %}
+
+{% block body_block %}
+
+<h3>{{ text }}</h3>
+
+<ul>
+  {% if musician_list %}
+    {% for musician in musician_list %}
+      <h5><li style="width:20%; margin-left: auto; margin-right: auto;">
+        {{ musician.first_name }} {{ musician.last_name }} : {{ musician.instrument }}
+      </li></h5>
+      {% endfor %}
+  {% else %}
+    <h5 style="width:10%; margin-left: auto; margin-right: auto; color: red;">No Musician in the list</h5>
+  {% endif %}
+</ul>
+{% endblock %}
