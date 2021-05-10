@@ -2,16 +2,22 @@
 
 {% extends "my_app/base.html" %}
 {% load static %}
+{% load my_filters %}
 
 {% block body_block %}
 
 <!-- here upper is a built in template filter -->
-<h3>{{ text_1|upper }}</h3>
+<!-- just make the text_1 upper -->
+<!-- <h3>{{ text_1| upper | custom_filter }}</h3> -->
+<!-- make total upper -->
+<h3>{{ text_1 | custom_filter| upper }}</h3>
 <br>
 <img src="{% static "my_app/images/boss_lady.jpg" %}" alt="boss_lady">
 <br>
+
 <!-- formating date using built in template filter: -->
-<h1>Release date: {{ value.release_date| date:"M d (D), Y" }}</h1>
+<h1> {{value2 | custom_filter2:' date:'}} {{ value.release_date| date:"M d (D), Y" }}</h1>
+
 <h1>{{ text_2 }}</h1>
 <table border="1">
   <tr>
