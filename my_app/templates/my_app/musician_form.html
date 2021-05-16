@@ -1,0 +1,10 @@
+{% extends 'my_app/base.html' %}
+{% block body_block %}
+<h3>Add New Musician</h3>
+<form method="POST">
+  <!-- here this form is automatically generated -->
+  {{ form.as_p }}
+  {% csrf_token %}
+  <input type="submit" name="submi" value="Add" class="btn btn-primary btn-sm">
+</form>
+{% endblock %}

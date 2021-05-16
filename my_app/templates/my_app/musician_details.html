@@ -1,12 +1,16 @@
 {% extends 'my_app/base.html' %}
   {% block body_block %}
     <h3>Musician Details:</h3>
-    <p>{{musician.first_name}} {{musician.last_name}}</p>
-    <p>{{musician.instrument}}</p>
-    <h3>Album</h3>
-    <ul>
-      {% for album in musician.album_list.all %}
-        <li>{{ album.name }}</li>
-      {% endfor %}
-    </ul>
+    <p><b>Name: </b>{{musician.first_name}} {{musician.last_name}}</p>
+    <p><b>Instrument: </b>{{musician.instrument}}</p>
+    <h3>Albums</h3>
+    {% if musician.album_list.all%}
+      <ul>
+        {% for album in musician.album_list.all %}
+          <li>{{ album.name }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>There is no album of this musician.</p>
+    {% endif %}
   {% endblock %}
