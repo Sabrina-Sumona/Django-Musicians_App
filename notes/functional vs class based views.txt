@@ -22,6 +22,21 @@ def index(request):
 class Index(TemplateView):
     template_name = 'my_app/index.html'
 -----------------------------------------------------------------------------
-if we use templates from app folder instead of project folder then the template
+# if we use templates from app folder instead of project folder then the template
 url will be 1st search in project folder's template, if not found then go to the
-app folder's template
+app folder's template, so we must maintain the path differece.
+-----------------------------------------------------------------------------
+# passing context in class based template's view
+class Index(TemplateView):
+    template_name = 'my_app/index.html'
+    def get_context_data(self, **kwargs):
+      context = super().get_context_data(**kwargs)
+      context['sample_text_1'] = 'Sample Text 1'
+      context['sample_text_2'] = 'Sample Text 2'
+      return context
+-----------------------------------------------------------------------------
+# here **kwargs is used to pass keywords & arguments
+# ** is for as much as we want , it can be one arg, 2 args .... n args or 0 arg
+# kwargs means {'key': 'value'}
+# here we can create as much as context we want
+# we just return the context & can use any of the texts anywhere in the templates
