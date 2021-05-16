@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Index</h1>
-    <h2>{{sample_text_1}}</h2>
-    <h3>{{sample_text_2}}</h3>
-  </body>
-</html>
+{% extends 'my_app/base.html' %}
+  {% block body_block %}
+    <ul>
+      {% for musician in musician_list %}
+        <li>{{musician.first_name}} {{ musician.last_name }}</li>
+      {% endfor %}
+    </ul>
+  {% endblock %}
