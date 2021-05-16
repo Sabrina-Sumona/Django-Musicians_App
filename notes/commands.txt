@@ -7,6 +7,7 @@ django-admin startproject NAME_OF_PROJECT
 -----------------------------------------------------------------------------
 Run Project:
 python manage.py runserver
+py manage.py runserver
 -----------------------------------------------------------------------------
 Change port:
 python manage.py runserver 7000

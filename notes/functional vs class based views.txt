@@ -1,0 +1,14 @@
+# function based view
+def index(request):
+    return HttpResponse("Hello World!")
+
+# class based view
+class Index(View):
+    def get(self, request):
+        return HttpResponse("Hello World!")
+
+# function based view's url
+path('', views.index, name='index')
+
+# class based view's url
+path('', views.Index.as_view(), name='index')

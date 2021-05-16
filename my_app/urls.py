@@ -5,5 +5,5 @@ from my_app import views
 app_name = "my_app"
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.Index.as_view(), name='index'),
 ]
