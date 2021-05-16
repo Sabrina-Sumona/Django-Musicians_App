@@ -13,4 +13,6 @@
     {% else %}
       <p>There is no album of this musician.</p>
     {% endif %}
+    <a href="{% url 'my_app:musician_update' pk=musician.pk %}" class="btn btn-warning btn-sm mr-2">Update</a>
+    <a href="{% url 'my_app:musician_delete' pk=musician.pk %}" class="btn btn-danger btn-sm ml-2">Delete</a>
   {% endblock %}
