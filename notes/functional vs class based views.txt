@@ -6,9 +6,22 @@ def index(request):
 class Index(View):
     def get(self, request):
         return HttpResponse("Hello World!")
-
+-----------------------------------------------------------------------------
 # function based view's url
 path('', views.index, name='index')
 
 # class based view's url
 path('', views.Index.as_view(), name='index')
+-----------------------------------------------------------------------------
+# function based template's view
+def index(request):
+    diction = {}
+    return render(request,'my_app/index.html', context=diction )
+
+# class based template's view
+class Index(TemplateView):
+    template_name = 'my_app/index.html'
+-----------------------------------------------------------------------------
+if we use templates from app folder instead of project folder then the template
+url will be 1st search in project folder's template, if not found then go to the
+app folder's template
