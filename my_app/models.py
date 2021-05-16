@@ -21,7 +21,7 @@ class Album(models.Model):
 	# id = models.AutoField(primary_key=True)
     # here we can't delete any musician if the musician's album exist here
     # when we use foreignkey the 1st parmeter must be that model name
-    artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
+    artist = models.ForeignKey(Musician, on_delete=models.CASCADE, related_name='album_list')
     name = models.CharField(max_length=100)
     release_date = models.DateField()
     # we can use choices as options
